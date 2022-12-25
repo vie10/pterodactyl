@@ -1,6 +1,7 @@
 import com.github.ajalt.clikt.core.CliktCommand
 import com.github.ajalt.clikt.core.subcommands
 import com.github.ajalt.clikt.parameters.arguments.argument
+import server.RestartCommand
 import server.StartCommand
 import server.StopCommand
 import server.UploadCommand
@@ -10,7 +11,7 @@ class ServerCommand : CliktCommand(
 ) {
 
     init {
-        subcommands(StopCommand(), StartCommand(), UploadCommand())
+        subcommands(StopCommand(), StartCommand(), UploadCommand(), RestartCommand())
     }
 
     val server by argument("id", help = "ID of the server")
